@@ -1,0 +1,8 @@
+#!/bin/bash
+# watch responsive
+# run from root
+
+# Stop on errors
+set -e
+
+sass --watch placemaster/static/sass/responsive.scss:placemaster/static/css/responsive.css

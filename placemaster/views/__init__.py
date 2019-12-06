@@ -1,2 +1,2 @@
 """Views, one for each placemaster page."""
-from placemaster.views.index import index
+from placemaster.views.index import index, login, logout, callback
