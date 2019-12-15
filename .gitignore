@@ -7,3 +7,4 @@ env/
 secretKeys.py
 node_modules/
 instance/
+var/
