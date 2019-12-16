@@ -12,6 +12,8 @@ setup(
         'datetime',
         'flask',
         'flask_login',
+        'flask_migrate',
+        'flask_script',
         'flask_sqlalchemy',
         'html5validator',
         'google-api-python-client',

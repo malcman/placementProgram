@@ -1,0 +1,11 @@
+#!/bin/bash
+# updateAlchemyDB
+
+# When using flask-migrate, a call to this will
+# update/create all SQLAlchemy databases
+
+# first ensure migration repo has been created with the folling commands:
+# $ python manage.py db init
+# $ python manage.py db migrate -m "initial migration"
+
+python manage.py db upgrade

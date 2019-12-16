@@ -7,21 +7,6 @@ APPLICATION_ROOT = '/'
 DEBUG = True
 USE_RELOADER = True
 
-# postgres implementation
-# note: this db needs to be already created by the specified user
-# https://www.codementor.io/engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb
-# SQLALCHEMY_TRACK_MODIFICATIONS = False
-# POSTGRES_USER = secretKeys.POSTGRES_USER
-# POSTGRES_PW = secretKeys.POSTGRES_PW
-# POSTGRES_URL = secretKeys.POSTGRES_URL
-# POSTGRES_DB = secretKeys.POSTGRES_DB
-# DB_URL = 'postgresql+psycopg2://{user}:{pw}@{url}/{db}'.format(
-#     user=POSTGRES_USER,
-#     pw=POSTGRES_PW,
-#     url=POSTGRES_URL,
-#     db=POSTGRES_DB)
-# SQLALCHEMY_DATABASE_URI = DB_URL
-
 
 # sqlite implementation
 # Database file is var/placemaster.sqlite3
