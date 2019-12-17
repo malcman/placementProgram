@@ -7,7 +7,7 @@ from flask_login import login_user, logout_user, current_user
 from requests.exceptions import HTTPError
 from lib.helpers import get_google_auth
 from placemaster import db, login_manager
-from placemaster.model.User import User
+from placemaster.model.user import User
 
 
 class LoginView(View):

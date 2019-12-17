@@ -14,3 +14,6 @@ class User(db.Model, UserMixin):
     avatar = db.Column(db.String(200))
     tokens = db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=datetime.datetime.utcnow())
+
+
+__all__ = ['User']

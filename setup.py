@@ -22,6 +22,7 @@ setup(
         'pycodestyle',
         'pydocstyle',
         'pylint',
+        'pylint-flask',
         'pyOpenSSL',
         'psycopg2',
         'nodeenv',

@@ -7,7 +7,7 @@ set -e
 
 # Sanity check command line options
 usage() {
-  echo "Usage: $0 (create|destroy|reset)"
+  echo "Usage: $0 (create | destroy | reset)"
 }
 
 if [ $# -ne 1 ]; then

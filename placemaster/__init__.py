@@ -1,17 +1,17 @@
 """Initialization for placemaster program."""
 import flask
+from sys import modules
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from config import config
 from placemaster.views import init_views
 from placemaster.google_login import create_google_login_blueprint
-from placemaster.model import init_db
-from placemaster.model.User import User
+from placemaster.model import init_db, db
+from placemaster.model.user import User
 
 
 # create extensions but do not yet initialize them with an app instance
-db = init_db()  # pylint: disable=invalid-name
-login_manager = LoginManager()  # pylint: disable=invalid-name
+login_manager = LoginManager()
 
 
 def create_app(config_name):
@@ -35,8 +35,10 @@ def create_app(config_name):
     app.config.from_envvar('PLACEMASTER_SETTINGS', silent=True)
 
     # initialize extensions
-    db.init_app(app)
     login_manager.init_app(app)
+
+    # setup db
+    init_db(app, db)
 
     # add views defined in views package
     init_views(app)

@@ -1,17 +1,22 @@
 """Helper functions to dynamically load views and models.
 
-Inspired by and largely taken from Bobby Waycott's blog:
+Inspired by and almost entirely taken from Bobby Waycott's blog:
 https://bobwaycott.com/blog/how-i-use-flask/organizing-flask-models-with-automatic-discovery/
 """
 from inspect import isclass
 from importlib import import_module
 from os import walk
 from os.path import abspath, basename, dirname, join
+from sys import modules
 from flask.views import View
 from flask_sqlalchemy import Model
 
+# Set as name of package
+PACKAGE_NAME = 'placemaster'
 # main project path & module name
-PROJ_DIR = abspath(join(dirname(abspath(__file__)), '../placemaster'))
+PROJ_DIR = abspath(join(
+    dirname(abspath(__file__)),
+    '../%s' % PACKAGE_NAME))
 APP_MODULE = basename(PROJ_DIR)
 
 
@@ -21,12 +26,14 @@ def get_modules(module):
     Usage:
       get_modules('models')
 
+    Return Type: String
+
     Yields dot-notated module paths for discovery/import.
     Example:
       /proj/app/models/foo.py > app.models.foo
     """
     file_dir = abspath(join(PROJ_DIR, module))
-    for root, _, files in walk(file_dir):
+    for root, _, files in walk(file_dir):  # pylint: disable=E1133
         mod_path = '{}{}'.format(
             APP_MODULE,
             root.split(PROJ_DIR)[1]).replace('/', '.')
@@ -37,14 +44,17 @@ def get_modules(module):
 
 
 def dynamic_loader(module, compare):
-    """Iterate over all .py files in `module` directory, finding all classes that
+    """
+    Load relevant modules specified by compare parameter.
+
+    Iterate over all .py files in `module` directory, finding all classes that
     match `compare` function AND have __all__ declared.
     Other classes/objects in the module directory will be ignored.
 
     Returns unique list of matches found.
     """
     items = []
-    for mod in get_modules(module):
+    for mod in get_modules(module):  # pylint: disable=E1133
         module = import_module(mod)
         if hasattr(module, '__all__'):
             objs = [getattr(module, obj) for obj in module.__all__]
@@ -53,8 +63,11 @@ def dynamic_loader(module, compare):
 
 
 def get_views(subdir=None):
-    """Dynamic view finder.
+    """
+    Dynamic view finder.
+
     If subdir is not specified, searches directly in app package views module.
+        i.e. placemaster.views
     If subdir is specified, only search in the views directory of that module.
     """
     module_dir = 'views'
@@ -77,7 +90,7 @@ def get_models():
 
 
 def is_model(item):
-    """Determines if `item` is a `Model` subclass."""
+    """Determine if `item` is a `Model` subclass."""
     return isclass(item) and issubclass(item, Model)
 
 
