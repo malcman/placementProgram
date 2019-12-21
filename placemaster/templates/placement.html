@@ -1,5 +1,9 @@
-{% extends 'base.html'}
+{% extends 'base.html' %}
 
 {% block content %}
+  {% if placement %}
+    <h1 class="placementName">{{ placement.name }}</h1>
+    <div id="appEntry"></div>
+  {% endif %}
 
 {% endblock %}

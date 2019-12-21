@@ -18,7 +18,7 @@
       <button class="backButton">Back</button>
       <form
         id="newPlacementForm"
-        action=""
+        action="/placement/create/"
         method="POST"
         enctype="multipart/form-data"
       >
@@ -43,13 +43,19 @@
     </div>
 
     <!-- existing placements list -->
+    {% if placements %}
     <div id="existingPlacementsModule" class="modulePane">
       <button class="backButton">Back</button>
-      <ul>
+      <h2>Your Placements</h2>
+      <ul id="placementsList">
         {% for p in placements %}
-          <a href="{{ url_for('placement', id=p.id) }}"><li></li></a>
+          <a href="{{ url_for('placement', id=p.id) }}">
+            <li>{{ p.name }}</li>
+          </a>
         {% endfor %}
       </ul>
     </div>
+    {% endif %}
+
   </div>
 {% endblock%}

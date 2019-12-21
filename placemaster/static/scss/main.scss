@@ -1,4 +1,5 @@
 $mainDark: #275076;
+$darkerMain: #2B4157;
 
 * {
   margin: 0;
@@ -32,7 +33,7 @@ h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
 }
 
-#newPlacementButton {
+#newPlacementButton, #viewPlacementsButton {
   font-family: 'Montserrat', sans-serif;
   padding: 5px 10px;
   border-radius: 5px;
@@ -156,6 +157,48 @@ h1, h2, h3 {
   left: 100%;
   &.pushedLeft {
     left: 0;
+  }
+}
+
+#orText {
+  width: fit-content;
+  display: block;
+  margin: auto;
+}
+
+#viewPlacementsButton {
+  border: none;
+  background-color: $mainDark;
+  color: white;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    right: 5px;
+    bottom: 8px;
+    width: 15px;
+    height: 15px;
+    border: 1px solid white;
+    border-width: 0 1px 1px 0;
+    transform: rotate(-45deg);
+    transition: right 0.3s;
+  }
+  &:hover {
+    &::after {
+      right: -5px;
+    }
+  }
+}
+
+#placementsList {
+  background-color: $darkerMain;
+  list-style: none;
+  margin-left: 0;
+  li {
+    font-size: 1.2em;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    padding: 15px 20px;
   }
 }
 
