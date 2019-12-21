@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+button {
+  cursor: pointer; }
+
+p {
+  font-family: sans-serif;
+  font-weight: 300; }
+
+header {
+  background-color: #275076;
+  color: white;
+  width: 100%;
+  position: relative; }
+  header a {
+    color: white; }
+  header h2 {
+    display: inline-block;
+    margin: 5px 10px; }
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif; }
+
+#newPlacementButton {
+  font-family: 'Montserrat', sans-serif;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 70%;
+  display: block;
+  margin: 5% auto 10%;
+  font-size: 1.3em; }
+
+#newPlacementForm input[type="text"] {
+  background-color: #275076;
+  font-size: 1.3em;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: 300;
+  color: white;
+  font-style: italic; }
+  #newPlacementForm input[type="text"]::placeholder {
+    color: #e6e6e6; }
+#newPlacementForm input[type="submit"] {
+  width: 100%;
+  cursor: pointer;
+  margin-left: 0;
+  border: 1px solid #275076;
+  font-size: 1.5em;
+  font-family: 'Montserrat', sans-serif;
+  padding: 15px 0;
+  border-radius: 0 0 5px 5px;
+  position: relative;
+  top: 15px; }
+#newPlacementForm input {
+  margin-left: 10%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 5px;
+  width: 70%; }
+#newPlacementForm h3 {
+  font-size: 1.5em;
+  font-weight: 400; }
+#newPlacementForm > * {
+  margin-top: 4%;
+  margin-left: 5%; }
+
+#userInfo {
+  font-weight: normal;
+  padding: 5px 10px;
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  right: 0; }
+  #userInfo * {
+    display: inline-block; }
+  #userInfo img {
+    border-radius: 50%;
+    height: 1.15em;
+    position: relative;
+    top: 3px; }
+  #userInfo h3 {
+    font-size: 1.15em;
+    font-weight: 300;
+    margin-left: 5px; }
+
+#userNav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  transition: opacity 0.3s linear 0.1s;
+  transition: transform 0.3s opacity 0.1s;
+  transform: scaleY(0) translateY(-50%);
+  opacity: 0;
+  font-family: 'Montserrat', sans-serif; }
+  #userNav.open {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+    box-shadow: 0px 0 6px rgba(0, 0, 0, 0.4);
+    border-radius: 0 0 5px 5px; }
+  #userNav a {
+    color: #275076;
+    width: 100%;
+    padding: 3px 5px; }
+    #userNav a:not(:first-of-type) {
+      border-top: 1px solid #275076; }
+
+.modulePane > *:not(form) {
+  margin-left: 5%;
+  margin-top: 2%; }
+
+#welcomeModule {
+  left: 0; }
+  #welcomeModule h2 {
+    padding-top: 5%; }
+  #welcomeModule.pushedLeft {
+    left: -100%; }
+
+#newPlacementModule, #existingPlacementsModule {
+  left: 100%; }
+  #newPlacementModule.pushedLeft, #existingPlacementsModule.pushedLeft {
+    left: 0; }
+
+.backButton {
+  font-size: 1.2em;
+  color: white;
+  font-weight: 300;
+  padding: 5px;
+  border: none;
+  background-color: transparent;
+  position: relative; }
+  .backButton::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    bottom: 8px;
+    width: 15px;
+    height: 15px;
+    border: 1px solid white;
+    border-width: 0 0 1px 1px;
+    transform: rotate(45deg); }
+
+.moduleWindow {
+  display: block;
+  margin: auto;
+  width: 60%;
+  min-height: 70vh;
+  color: white;
+  border-radius: 2px;
+  overflow-x: hidden;
+  margin-top: 5%;
+  position: relative;
+  transition: left 0.5s; }
+  .moduleWindow > * {
+    background-color: #275076;
+    position: absolute;
+    width: 100%;
+    transition: left 0.5s; }
+
+/*# sourceMappingURL=main.css.map */

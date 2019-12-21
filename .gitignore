@@ -8,3 +8,4 @@ secretKeys.py
 node_modules/
 instance/
 var/
+.sass-cache/

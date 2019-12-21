@@ -1,5 +1,55 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1 id="howdy">Howdy partner</h1>
+  <div class="moduleWindow" id="startupModule">
+    <!-- startup module to choose exisiting placements or create new one -->
+    <div id="welcomeModule" class="modulePane">
+      <h2>Welcome.</h2>
+      <p>Select a placement set to get started.</p>
+      <button id="newPlacementButton">Create new placements</button>
+      {% if placements %}
+      <p id="orText">- OR -</p>
+      <button id="viewPlacementsButton">View existing placements</button>
+      {% endif %}
+    </div>
+
+    <!-- new placement creation form -->
+    <div id="newPlacementModule" class="modulePane">
+      <button class="backButton">Back</button>
+      <form
+        id="newPlacementForm"
+        action=""
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <h3>Title: </h3>
+        <input
+          type="text"
+          placeholder="i.e. WSN Fall '20"
+          name="placementTitle"
+        >
+
+        <h3>Sign-Up File:</h3>
+        <input type="file" name="signUpFile">
+
+        <h3>Groups File:</h3>
+        <input type="file" name="groupsFile">
+        <input
+          type="submit"
+          name="placementSubmit"
+          value="Create and Optimize"
+        >
+      </form>
+    </div>
+
+    <!-- existing placements list -->
+    <div id="existingPlacementsModule" class="modulePane">
+      <button class="backButton">Back</button>
+      <ul>
+        {% for p in placements %}
+          <a href="{{ url_for('placement', id=p.id) }}"><li></li></a>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
 {% endblock%}

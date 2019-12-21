@@ -5,15 +5,36 @@
   <title>Placemaster</title>
   <!-- Montserrat -->
   <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,700&display=swap" rel="stylesheet"> -->
+
+  <!-- favicons -->
+  <link rel="shortcut icon" href="https://static.wixstatic.com/media/2d9b59_4d3f5e1bcc7e42fdb1567ba2740d72ed%7Emv2.png/v1/fill/w_32%2Ch_32%2Clg_1%2Cusm_0.66_1.00_0.01/2d9b59_4d3f5e1bcc7e42fdb1567ba2740d72ed%7Emv2.png" type="image/png">
+
+  <link rel="apple-touch-icon" href="https://static.wixstatic.com/media/2d9b59_4d3f5e1bcc7e42fdb1567ba2740d72ed%7Emv2.png/v1/fill/w_32%2Ch_32%2Clg_1%2Cusm_0.66_1.00_0.01/2d9b59_4d3f5e1bcc7e42fdb1567ba2740d72ed%7Emv2.png" type="image/png">
+  <!-- end favicons -->
+
+
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
 </head>
 <body>
-  {% if logged_in %}
-    <p>Welcome, {{ logname }}</p>
-  {% endif %}
+  <header>
+    <a href="{{ url_for('index') }}"><h2>Placemaster</h2></a>
+    {% if current_user.is_authenticated %}
+      <div id="userInfo">
+        <img src="{{ current_user.avatar }}" alt="profile picture">
+        <h3> {{ current_user.name.split(' ')[0] }}</h3>
+
+        <!-- nav displaying user options. this could be expanded later. -->
+        <ul id="userNav">
+          <a href="{{ url_for('google_auth.logout') }}"><li>Logout</li></a>
+        </ul>
+      </div>
+    {% else %}
+    {% endif %}
+  </header>
 
   {% block nav %}
-    <p><a href="{{ url_for('index') }}">Home</a></p>
   {% endblock %}
 
   {% block content %}

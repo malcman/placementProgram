@@ -8,4 +8,4 @@ function CompName(props) {
   );
 }
 
-export default CompName(props);
+export default CompName;

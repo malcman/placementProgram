@@ -17,6 +17,7 @@ class Config():
         basedir,
         'var', 'uploads'
     )
+    ALLOWED_EXTENSIONS = set(['csv'])
     APPLICATION_ROOT = '/'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 

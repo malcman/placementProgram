@@ -5,4 +5,4 @@
 # Stop on errors
 set -e
 
-sass --watch placemaster/static/sass/main.scss:placemaster/static/css/main.css
+sass --watch placemaster/static/scss/main.scss:placemaster/static/css/main.css
