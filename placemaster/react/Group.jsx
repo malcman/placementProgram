@@ -9,6 +9,9 @@ class Group extends React.Component {
   }
   render() {
     return (
+      <li>
+        <div> GroupName </div>
+      </li>
     );
   }
 }

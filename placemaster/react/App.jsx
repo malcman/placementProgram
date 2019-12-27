@@ -1,15 +1,16 @@
 import React from 'react';
-// import Placement from './Placement';
+import Placement from './Placement';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+    };
   }
+
   render() {
     return (
-      <section>
-        <h1>Stuff</h1>
-      </section>
+      <Placement />
     );
   }
 }

@@ -18,10 +18,15 @@ header {
     color: white; }
   header h2 {
     display: inline-block;
-    margin: 5px 10px; }
+    margin: 5px 10px;
+    font-weight: 400;
+    font-style: italic; }
 
 h1, h2, h3 {
   font-family: 'Montserrat', sans-serif; }
+
+#GroupList {
+  list-style-type: none; }
 
 #newPlacementButton, #viewPlacementsButton {
   font-family: 'Montserrat', sans-serif;
@@ -158,6 +163,15 @@ h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
     padding: 15px 20px; }
 
+.placementName {
+  color: white;
+  background-color: #275076;
+  padding: 20px 0 10px 15px; }
+
+#placementTabs {
+  color: white;
+  background-color: #275076; }
+
 .backButton {
   font-size: 1.2em;
   color: white;
@@ -193,5 +207,16 @@ h1, h2, h3 {
     position: absolute;
     width: 100%;
     transition: left 0.5s; }
+
+.Placement li[role="tab"] {
+  display: inline-block;
+  margin: 2%;
+  padding: 1%;
+  cursor: pointer; }
+  .Placement li[role="tab"][aria-selected="true"] {
+    border-bottom: 2px solid white; }
+
+.Manager.hidden {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */

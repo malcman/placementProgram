@@ -26,11 +26,17 @@ header {
   h2 {
     display: inline-block;
     margin: 5px 10px;
+    font-weight: 400;
+    font-style: italic;
   }
 }
 
 h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
+}
+
+#GroupList {
+  list-style-type: none;
 }
 
 #newPlacementButton, #viewPlacementsButton {
@@ -202,6 +208,17 @@ h1, h2, h3 {
   }
 }
 
+.placementName {
+  color: white;
+  background-color: $mainDark;
+  padding: 20px 0 10px 15px;
+}
+
+#placementTabs {
+  color: white;
+  background-color: $mainDark;
+}
+
 .backButton {
   font-size: 1.2em;
   color: white;
@@ -241,3 +258,23 @@ h1, h2, h3 {
     transition: left 0.5s;
   }
 }
+
+.Placement {
+  li[role="tab"] {
+    display: inline-block;
+    margin: 2%;
+    padding: 1%;
+    cursor: pointer;
+    &[aria-selected="true"] {
+      border-bottom: 2px solid white;
+    }
+  }
+}
+
+.Manager {
+  &.hidden {
+    display: none;
+  }
+}
+
+
