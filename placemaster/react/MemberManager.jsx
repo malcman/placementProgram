@@ -18,6 +18,15 @@ class MemberManager extends React.Component {
           groupNumber={1}
           key={1}
         />,
+        <Member
+          name={'Jane'}
+          email={'janejane@umich.edu'}
+          campus={'north'}
+          gender={'female'}
+          year={'freshman'}
+          groupNumber={2}
+          key={2}
+        />,
       ],
     };
   }
@@ -26,7 +35,7 @@ class MemberManager extends React.Component {
 
     // TODO: change to get this from data
     // column headers for each member
-    const memberHeaders = ['Name', 'Email', 'Campus', 'Gender', 'Year'];
+    const memberHeaders = ['Group', 'Name', 'Email', 'Campus', 'Gender', 'Year'];
     return (
       <section
         className={className}

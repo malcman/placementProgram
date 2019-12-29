@@ -8,7 +8,26 @@ class GroupManager extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      groups: [<Group key={1} />],
+      groups: [
+        <Group
+          key={1}
+          number={1}
+          day={'Mon'}
+          time={'6:00 - 7:00'}
+          campus={'North'}
+          room={'BBB 1670'}
+          level={'Grad'}
+        />,
+        <Group
+          key={2}
+          number={2}
+          day={'Tues'}
+          time={'7:00 - 8:00'}
+          campus={'Central'}
+          room={'NQ 1500'}
+          level={'UG'}
+        />,
+      ],
     };
     this.fetchGroups = this.fetchGroups.bind(this);
   }

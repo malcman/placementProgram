@@ -193,18 +193,20 @@ h1, h2, h3 {
 
 .headersContainer {
   width: 100%;
-  background-color: #e0e0e0; }
+  background-color: #e0e0e0;
+  display: inline-grid;
+  grid-template-columns: repeat(6, 1fr); }
 
 .ToggleSortHeader {
   display: inline-block;
   padding: 5px 25px 5px 20px;
   font-family: Helvetica Neue;
-  border: solid black;
-  border-width: 0 1px 0 0;
   cursor: pointer; }
   .ToggleSortHeader h4 {
     font-weight: 400;
     position: relative; }
+  .ToggleSortHeader:last-of-type {
+    border-right: none; }
   .ToggleSortHeader.active h4 {
     font-weight: 600; }
   .ToggleSortHeader.active h4::after {
@@ -250,5 +252,23 @@ h1, h2, h3 {
 
 .Manager.hidden {
   display: none; }
+
+.Member, .Group {
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: repeat(6, 1fr); }
+  .Member p, .Group p {
+    display: inline-block;
+    padding: 5px;
+    padding-right: 0;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-width: 0 1px 0 0;
+    overflow: scroll; }
+    .Member p:first-of-type, .Group p:first-of-type {
+      margin-left: 15px; }
+    .Member p:last-of-type, .Group p:last-of-type {
+      border-width: 0; }
+  .Member:nth-of-type(even), .Group:nth-of-type(even) {
+    background-color: #F0F6FD; }
 
 /*# sourceMappingURL=main.css.map */
