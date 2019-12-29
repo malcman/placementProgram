@@ -240,6 +240,51 @@ h1, h2, h3 {
   }
 }
 
+.headersContainer {
+  width: 100%;
+  background-color: lighten(lightgrey, 5%);
+}
+
+.ToggleSortHeader {
+  display: inline-block;
+  padding: 5px 25px 5px 20px;
+  font-family: Helvetica Neue;
+  border: solid black;
+  border-width: 0 1px 0 0;
+  cursor: pointer;
+  h4 {
+    font-weight: 400;
+    position: relative;
+  }
+  &.active {
+    h4 {
+      font-weight: 600;
+    }
+    h4::after {
+      content: '';
+      transition: transform 0.3s;
+      position: absolute;
+      right: -15px;
+      top: 15%;
+      width: 0;
+      height: 0;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 10px solid lighten(black, 20%);
+    }
+    &.down {
+      h4::after {
+        transform: rotate(90deg);
+      }
+    }
+    &.up {
+      h4::after {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}
+
 .moduleWindow {
   display: block;
   margin: auto;

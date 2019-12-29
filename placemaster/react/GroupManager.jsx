@@ -1,5 +1,6 @@
 import React from 'react';
 import Group from './Group';
+import HeadersManager from './HeadersManager';
 
 const classNames = require('classnames');
 
@@ -33,12 +34,17 @@ class GroupManager extends React.Component {
 
   render() {
     const className = classNames('Manager', { hidden: !this.props.focused });
+
+    // TODO: change to get this from data
+    // column headers for each member
+    const groupHeaders = ['Number', 'Day', 'Time', 'Campus', 'Room', 'UG/Grad'];
     return (
       <section
         className={className}
         id="GroupManager"
         aria-labelledby="GroupTag"
       >
+        <HeadersManager headers={groupHeaders} currentSort={'Number'} />
         <ul id="GroupList">
           {this.state.groups}
         </ul>
