@@ -99,7 +99,6 @@ h1, h2, h3 {
   position: absolute;
   bottom: 0;
   right: 0;
-  background-color: white;
   * {
     display: inline-block;
   }
@@ -127,6 +126,7 @@ h1, h2, h3 {
   transform: scaleY(0) translateY(-50%);
   opacity: 0;
   font-family: 'Montserrat', sans-serif;
+  background-color: white;
   &.open {
     opacity: 1;
     transform: scaleY(1) translateY(0);
