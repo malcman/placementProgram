@@ -77,7 +77,8 @@ h1, h2, h3 {
   box-sizing: border-box;
   position: absolute;
   bottom: 0;
-  right: 0; }
+  right: 0;
+  background-color: white; }
   #userInfo * {
     display: inline-block; }
   #userInfo img {
